@@ -40,7 +40,7 @@
                                 <div class="form-group">
                                     {!! Form::label('user_type', 'User type: ', ['class' => 'col-md-4 control-label']) !!}
                                     <div class="col-md-6">
-                                        {!! Form::select('user_type', ['1' => 'Host', '2' => 'Student', '3' => 'Guardian'], ['class' => 'form-control']) !!}
+                                        {!! Form::select('user_type', ['1' => 'Host', '2' => 'Student'], ['class' => 'form-control']) !!}
                                     </div>
                                 </div>
                                 <div class="form-group">

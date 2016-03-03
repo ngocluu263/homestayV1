@@ -25,18 +25,25 @@
                     @foreach ($rooms as $room)
 
                         <tr>               
-                            <td class="col-md-3"><img src="/images/public/mac.jpg" alt="..." class="img-thumbnail"></td>
-                            <td class="col-md-6">
-                                <h4>{{ $room->room_type }} in {{ $room->city }}</h4>
-                                <div>{{ $room->title }}</div>
-                                <div>{{ $room->title }}</div>
-                            </td>                          
                             <td class="col-md-3">
-                                <a href="{{ url('rooms/'.$room->id) }}" ><button class="btn btn-sm btn-primary">Detail</button></a>
-                                <form action="{{ url('rooms/del/'.$room->id) }}" style='display: inline' method="POST">
+                                <a href="{{ url('rooms/'.$room->id) }}" >
+                                    <img src="/images/public/mac.jpg" alt="..." class="img-thumbnail">
+                                </a>
+                            </td>
+                            
+                                <td class="col-md-6">
+                                    <a href="{{ url('rooms/'.$room->id) }}" >
+                                        <h4>{{ $room->room_type }} in {{ $room->city }}</h4>
+                                    </a> 
+                                    <div>{{ $room->title }}</div>
+                                    <div>{{ $room->title }}</div>
+                                </td>  
+                                                   
+                            <td class="col-md-3">
+                                <form action="{{ url('host/room/'.$room->id) }}" style='display: inline' method="POST">
                                     <input type="hidden" name="_method" value="DELETE">
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
-                                    <button class="btn btn-sm btn-danger" onclick="return confirm('确定删除?')">删除</button>
+                                    <button class="btn btn-sm btn-danger" onclick="return confirm('确定删除?')">Delete</button>
                                 </form>
                             </td>
                         </tr>              

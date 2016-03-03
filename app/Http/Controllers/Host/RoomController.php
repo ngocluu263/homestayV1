@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers\Host;
 
 use Auth;
+use File;
 use App\User;
 use App\Room;
 use App\Photo;
@@ -19,7 +20,8 @@ class RoomController extends Controller {
 	public function __construct()
     {
 
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => ['preview']]);
+        
         $this->middleware('host');
     }
 
@@ -148,22 +150,21 @@ class RoomController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	// public function destroy($id)
-	// {
-	// 	$res = Room::where('id', $id)->first();
- //        $res->delete();
- //        session()->flash('message', "该房源已经被移除");
- //        return Redirect::back();
-	// }
-
-    public function delRoom($id)
-    {
-        echo "123";exit;
-        $res = Room::where('id', $id)->first();
+	public function destroy($id)
+	{
+		$res = Room::where('id', $id)->first();
         $res->delete();
-        session()->flash('message', "该房源已经被移除");
+        session()->flash('message', "Deleted successfully");
         return Redirect::back();
-    }
+	}
+
+    // public function delRoom($id)
+    // {
+    //     $res = Room::where('id', $id)->first();
+    //     $res->delete();
+    //     session()->flash('message', "该房源已经被移除");
+    //     return Redirect::back();
+    // }
 
 	public function update_room(Request $request)
     {
@@ -269,7 +270,8 @@ class RoomController extends Controller {
         $input = Input::all();
  
         $rules = array(
-            'file' => 'image|max:3000',
+            //'file' => 'image|max:3000',
+            'file' => 'required|mimes:jpg,jpeg,png,bmp|max:3000',
         );
  
         $validation = Validator::make($input, $rules);
@@ -277,21 +279,20 @@ class RoomController extends Controller {
         if ($validation->fails()) {
             return Response::make($validation->errors->first(), 400);
         }
-        $destinationPath = 'uploads/rooms/'; // upload path
+
+        $destinationPath = 'uploads/rooms/' . $id; // upload path
+
+        if (!file_exists($destinationPath)) {
+            $gallery_folder_path = File::makeDirectory($destinationPath, 0777, true, true);
+            $distinationPath = $gallery_folder_path;
+        }
+
         $extension = Input::file('file')->getClientOriginalExtension(); // getting file extension
-        $fileName = rand(11111, 99999) . '.' . $extension; // renameing image
+        $fileName = rand(100, 999) . '.' . $extension; // renameing image
         $upload_success = Input::file('file')->move($destinationPath, $fileName); // uploading file to given path
 
-        //$flyer = Upload::locatedAt($id)->first();
-        //print_r($flyer);exit;
-
-        // $photo = new Upload;
-        // $photo->room_id = 1;
-        // $photo->path = $fileName;
-        // $photo->save();
-
         $room = Room::where('id', $id)->first();
-        $room->photos()->create(['path' => "/uploads/rooms/{$fileName}"]);
+        $room->photos()->create(['path' => "uploads/rooms/{$id}/{$fileName}"]);
  
         if ($upload_success) {
             return Response::json('success', 200);
@@ -300,6 +301,21 @@ class RoomController extends Controller {
         }
 
         
+
+    }
+
+    public function delPhoto($id)
+    {
+
+        $fileName = Photo::where('id', $id)->first();
+
+        $filePath = $fileName->path;
+        //print_r($filePath);exit;
+        $photo = Photo::findOrFail($id)->delete();
+
+        File::delete($filePath);
+
+        return Redirect::back();
 
     }
 

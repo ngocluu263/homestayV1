@@ -155,7 +155,8 @@ Route::get('download/grade', [
 
 
 ### Images upload ###
-Route::get('host/room/upload', [
-    'as' => 'host_room_upload', 'uses' => 'uploadController@show']);
+// Route::get('host/room/upload', [
+//     'as' => 'host_room_upload', 'uses' => 'uploadController@show']);
 
 Route::post('rooms/{id}/photos', 'Host\RoomController@addPhoto');
+Route::delete('photos/{id}', 'Host\RoomController@delPhoto');

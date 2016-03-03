@@ -25,6 +25,8 @@
 
     <link href="{{ asset('/css/sweetalert.css') }}" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{ asset('/css/jquery-gallery.min.css') }}">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -149,6 +151,9 @@
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 <script src="/js/sweetalert.min.js"></script>
 <script src="/js/dropzone.js"></script>
+<script src="/js/jquery-gallery.min.js"></script>
+
+@yield('dropzoneJs')
 
 @include('flash')
 
@@ -205,24 +210,7 @@ $(document).ready(function(){
      $('[data-toggle="tooltip"]').tooltip();  
 });
 
- //Dropzone file upload
- var baseUrl = "{{ url('/') }}";
-            var token = "{{ Session::getToken() }}";
-            Dropzone.autoDiscover = false;
-             var myDropzone = new Dropzone("div#dropzoneFileUpload", {
-                 url: baseUrl+"/rooms/{{$room->id}}/photos",
-                 params: {
-                    _token: token
-                  }
-             });
-             Dropzone.options.myAwesomeDropzone = {
-                paramName: "file", // The name that will be used to transfer the file
-                maxFilesize: 2, // MB
-                addRemoveLinks: true,
-                accept: function(file, done) {
-                  
-                },
-              };
+
 
 
 </script>

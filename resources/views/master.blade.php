@@ -46,7 +46,7 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"> {{ Auth::user()->email }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								@if (Auth::user()->user_type == 1)
-									<li><a href="{{ url('/host/edit') }}">Edit Profile</a></li>
+									<li><a href="{{ url('/host/profile') }}">Edit Profile</a></li>
 									<li><a href="{{ url('/rooms') }}">Your Listing</a></li>
 									<li><a href="{{ url('') }}">Account Setting</a></li>
 								@endif

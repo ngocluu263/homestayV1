@@ -19,6 +19,7 @@ class HostController extends Controller {
         $this->middleware('auth');
         
         $this->middleware('host');
+
     }
 
     /**

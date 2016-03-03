@@ -29,15 +29,16 @@ class registerController extends Controller {
     {
        
         $this->validate($request, [
-        	'email' => 'required|unique:users',
-        	'password' => 'required|min:6|max:20'
+        	'email'        => 'required|unique:users',
+        	'password'     => 'required|min:6|max:20',
+            'user_type'    => 'required'
         	]);
 
         $user = new User;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        //$user->is_admin = 0;
         $user->user_type = $request->user_type;
+       
         $user->save();
 
         // Add new blank row in grades table
