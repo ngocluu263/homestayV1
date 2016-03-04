@@ -16,6 +16,14 @@
 		font-family: 'Lato', sans-serif;
 	}*/
 
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; // remove the gap so it doesn't close
+ }
+
+a:hover {
+	text-decoration: none;
+}
 
 body {
   background: #fff;
