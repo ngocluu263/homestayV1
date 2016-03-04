@@ -15,7 +15,18 @@
 
             <div class="col-md-10">
                 {!! Form::label('country', 'Country: ', ['class' => 'control-label form-group']) !!}
-                {!! Form::text('country', null, ['class' => 'form-control form-group', 'required']) !!}
+                <!-- {!! Form::text('country', null, ['class' => 'form-control form-group', 'required']) !!} -->
+                <select id="country" name="country" class="form-control form-group">
+
+                    @foreach (App\Http\Utilities\Country::all() as $country => $code)
+
+                     <option value="{{ $code }}">{{$country}}</option>
+
+                    @endforeach
+
+                   
+                </select>
+                    
             </div>
             <div class="col-md-10">
                 {!! Form::label('address1', 'Street Address: ', ['class' => 'control-label form-group']) !!}

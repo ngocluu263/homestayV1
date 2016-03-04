@@ -40,11 +40,14 @@
                                 </td>  
                                                    
                             <td class="col-md-3">
-                                <form action="{{ url('host/room/'.$room->id) }}" style='display: inline' method="POST">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <input type="hidden" name="_token" value="{{csrf_token()}}">
-                                    <button class="btn btn-sm btn-danger" onclick="return confirm('确定删除?')">Delete</button>
+                                <form action="{{ url('host/room/'.$room->id) }}" style='display: inline' method="POST" id="myform">
+                                     <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="_token" value="{{csrf_token()}}"> 
                                 </form>
+                                <button class="btn btn-sm btn-danger " id="delete">
+                                    <i class="fa fa-trash-o"></i>
+                                        Delete
+                                </button>
                             </td>
                         </tr>              
 
@@ -62,5 +65,30 @@
 
 </div>
 <?php echo $rooms->render(); ?>
+
+@stop
+
+
+
+@section('dropzoneJs')
+
+    <script type="text/javascript">
+
+        $('button#delete').on('click', function(){
+            swal({   
+            title: "Are you sure?",
+            text: "You will not be able to recover this lorem ipsum!",         type: "warning",   
+            showCancelButton: true,   
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, delete it!", 
+            closeOnConfirm: false 
+        }, 
+        
+        function(){   
+            $("#myform").submit();
+          });
+        })
+
+    </script>
 
 @stop

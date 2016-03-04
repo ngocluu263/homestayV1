@@ -97,7 +97,7 @@
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                         <li>
-                            <a href="/host/room"><i class="fa fa-fw fa-user"></i> Listing</a>
+                            <a href="/rooms"><i class="fa fa-fw fa-user"></i> Listing</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
@@ -150,7 +150,6 @@
 <script type="text/javascript" src="/js/all.js"></script>
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 <script src="/js/sweetalert.min.js"></script>
-<script src="/js/dropzone.js"></script>
 <script src="/js/jquery-gallery.min.js"></script>
 
 @yield('dropzoneJs')
@@ -159,41 +158,6 @@
 
 <!-- More content link -->
 <script>
-$(document).ready(function() {
-    var showChar = 40;
-    var ellipsestext = " ...";
-    var moretext = " + More";
-    var lesstext = " Less";
-    $('.more').each(function() {
-        var content = $(this).html();
-
-        if(content.length > showChar) {
-
-            var c = content.substr(0, showChar);
-            var h = content.substr(showChar-1, content.length - showChar);
-
-            var html = c + '<span class="moreelipses">'+ellipsestext+'</span>&nbsp;<span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">'+moretext+'</a></span>';
-
-            $(this).html(html);
-        }
-
-    });
-
-    $(".morelink").click(function(){
-        if($(this).hasClass("less")) {
-            $(this).removeClass("less");
-            $(this).html(moretext);
-        } else {
-            $(this).addClass("less");
-            $(this).html(lesstext);
-        }
-        $(this).parent().prev().toggle();
-        $(this).prev().toggle();
-        return false;
-    });
-});
-
-
 
 $(document).ready(function(){
     // Redirect to current tab after submitting
@@ -209,7 +173,6 @@ $(document).ready(function(){
     //Show tooltip
      $('[data-toggle="tooltip"]').tooltip();  
 });
-
 
 
 

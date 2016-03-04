@@ -80,12 +80,25 @@
     <script src="/js/headroom.min.js"></script>
 	<script src="/js/jQuery.headroom.min.js"></script>
 	<script src="/js/template.js"></script>
+	<script src="/js/jquery.shorten.min.js"></script>
 
 	<!-- gallery !!!require!!!--> 
 	<script src="/js/jquery-gallery.min.js"></script>
 	<!-- gallery 去掉可以显示全屏--> 
 	<!-- <script src="/js/bootstrap-image-gallery.min.js"></script> -->
 	<script src="/js/sweetalert.min.js"></script>
+
+	<script type="text/javascript">
+
+	    $(document).ready(function() {
+		
+		$(".comment").shorten();
+		
+		$(".comment-small").shorten({showChars: 10});
+
+	 	});
+
+	</script>
 
 	@include('flash')
 

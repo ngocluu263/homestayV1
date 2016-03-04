@@ -11,8 +11,9 @@ body {
 /* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
 
 .business-header {
-    height: 500px;
-    background: url('/images/public/mac.jpg') center center no-repeat scroll;
+    height: 700px;
+    /*background: url('url(/{{ $photo->path }})') center center no-repeat scroll;*/
+    background: center no-repeat scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;

@@ -5,7 +5,7 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background:rgba(255,255,255, .35)">
         <div class="container">
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -30,6 +30,9 @@
                     <li>
                         <a class="page-scroll" href="#host">The Host</a>
                     </li>
+                    <li>
+                        <a class="page-scroll" href="{{ url('rooms/'.$room->id) }}">Return to listing</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -39,15 +42,38 @@
     <!-- Navigation End -->
 
     <!-- Intro Section 去掉intro-section能解决字体重叠问题 -->
-    <section id="intro" class="">
+    <section id="intro" class="" style="margin-top:-50px;">
         
-        <header class="business-header"></header>
+        <header>
+            @if (!empty($photo))
+            <a href="/{{ $photo->path }}" data-gallery> 
+                <img class="business-header" style="width:100%;" src="/{{ $photo->path }}" alt="">
+            </a>
+            @else
+                <img class="business-header" style="width:100%;" src="/images/4.jpg" alt="">
+            @endif
+        </header>
         
         <div class="container" style="padding-top:30px;">
             <div class="row">
                 
                 <div class="col-sm-2">
-                    <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
+
+<!--                     @foreach ($room->photos as $photo)
+
+                        <form method="POST" action="/photos/{{ $photo->id }}" class="col-md-3">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                            <button type="submit">Delete</button>
+                        </form>
+                        <a href="/{{ $photo->path }}" title="Banana" data-gallery>
+                            <img src="/{{ $photo->path }}" style="width:100px; height:100px;">
+                        </a>
+
+                    @endforeach -->
+                    @if (!empty($photo)) 
+                        <img class="img-circle img-responsive img-center" src="/{{ $photo->path }}" alt="">                   
+                    @endif
                 </div>
                 
                 <div class="col-sm-10">
@@ -240,7 +266,9 @@
                         <table class="table table-condensed"> 
                             <tbody>
                                 <tr>
-                                    <td style="border-top:none;">{{ $room->intro }}</td>
+                                    <td style="border-top:none;">
+                                        <div class="comment">{{ $room->intro }}</div>
+                                    </td>
                                 </tr>
                             </tbody>              
                         </table>
@@ -249,14 +277,8 @@
             </div>
             <!-- /.row -->
 
-            <!-- <div class="row">
-                <img src="http://placehold.it/300x300" alt="..." class="img-thumbnail">
-                <img src="http://placehold.it/300x300" alt="..." class="img-thumbnail">
-                <img src="http://placehold.it/300x300" alt="..." class="img-thumbnail">
-            </div> -->
-
             <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-            <div id="blueimp-gallery" class="blueimp-gallery">
+            <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
                 <!-- The container for the modal slides -->
                 <div class="slides"></div>
                 <!-- Controls for the borderless lightbox -->
@@ -290,16 +312,18 @@
                 </div>
             </div>
 
-            <div id="links">
-                <a href="/images/big.jpg" title="Banana" data-gallery>
-                    <img src="/images/big.jpg" alt="Banana">
-                </a>
-                <a href="/images/sm.jpg" title="Apple" data-gallery>
-                    <img src="/images/sm.jpg" alt="Apple">
-                </a>
-                <a href="/images/xs.jpg" title="Orange" data-gallery>
-                    <img src="/images/xs.jpg" alt="Orange">
-                </a>
+            <div class="row" id="links">
+
+                @if (!empty($photo)) 
+                    @foreach ($room->photos as $photo)
+                    <div class="col-md-3 portfolio-item">
+                        <a href="/{{ $photo->path }}" title="" data-gallery>
+                            <img src="/{{ $photo->path }}" class="img-responsive">
+                        </a>
+                    </div>
+                    @endforeach
+                @endif
+
             </div>
 
 
@@ -309,7 +333,7 @@
     </section>
 
     <!-- The Host Section -->
-    <section id="host" class="">
+    <section id="host" class="" style="background-color:rgb(245,245,245); padding:30px">
         <div class="container" style="padding-top:30px;">
             <div class="row">
                 <div class="col-sm-2">

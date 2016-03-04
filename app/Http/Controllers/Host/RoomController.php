@@ -104,10 +104,8 @@ class RoomController extends Controller {
     {
         $user_id = Auth::user()->id;
         $room = Room::find($id)->where('id', $id)->where('user_id', $user_id)->first();
-        //$host_info = Host_info::find($id)->where('id', $id)->where('user_id', $user_id)->first();
-        //$room->amenities = explode(",", $room->amenities);
-        //print_r($host_info);exit;
-        return view('host.room.preview', compact('room', 'host_info'));
+        $photo = $room->photos()->first();
+        return view('host.room.preview', compact('room', 'photo'));
     }
 
     public function show_location($id)
