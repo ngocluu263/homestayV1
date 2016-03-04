@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ asset('/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/all.css') }}">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/awesome-bootstrap-checkbox.css') }}">
 
     <!-- file upload -->
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/dropzone.css') }}">

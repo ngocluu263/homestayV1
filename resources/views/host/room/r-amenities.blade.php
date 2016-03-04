@@ -1,4 +1,4 @@
-<!-- Accommodation tab begin-->
+<!--Accommodation tab begin-->
 <div class="tab-pane fade" id="amenities">
 	<h3>  Tell travelers about your space </h3>
 
@@ -54,35 +54,37 @@
 
       <div class="col-md-9 form-group">
 
-          <div>
-              {!! Form::checkbox('amenities[]', 'Tv', in_array('Tv', $room->amenities)) !!}   
-              {!! Form::label('amenities', 'Tv', ['class' => 'control-label']) !!}                          
+          <div class="checkbox checkbox-success">
+              <input id="tv" name="amenities[]" value="Tv" type="checkbox" <?php if(in_array('Tv', $room->amenities)) echo 'checked="checked"'; ?> >
+              <label for="tv" class="control-label">Tv</label>
           </div>
-          <div>
-              {!! Form::checkbox('amenities[]', 'Air Conditioning', in_array('Air Conditioning', $room->amenities)) !!}   
-              {!! Form::label('amenities', 'Air Conditioning', ['class' => 'control-label']) !!}                          
+
+          <div class="checkbox checkbox-success">
+              <input id="ac" name="amenities[]" value="Air Conditioning" type="checkbox" <?php if(in_array('Air Conditioning', $room->amenities)) echo 'checked="checked"'; ?> >
+              <label for="ac" class="control-label">Air Conditioning</label>
           </div>
-          <div>
+
+          <div class="checkbox checkbox-success">
               {!! Form::checkbox('amenities[]', 'Heating', in_array('Heating', $room->amenities)) !!}   
               {!! Form::label('amenities', 'Heating', ['class' => 'control-label']) !!}                          
           </div>
-          <div>
+          <div class="checkbox checkbox-success">
               {!! Form::checkbox('amenities[]', 'Kitchen', in_array('Kitchen', $room->amenities)) !!}   
               {!! Form::label('amenities', 'Kitchen', ['class' => 'control-label']) !!}                          
           </div>
-          <div>
+          <div class="checkbox checkbox-success">
               {!! Form::checkbox('amenities[]', 'Washer', in_array('Washer', $room->amenities)) !!}   
               {!! Form::label('amenities', 'Wahser', ['class' => 'control-label']) !!}                          
           </div>
-          <div>
+          <div class="checkbox checkbox-success">
               {!! Form::checkbox('amenities[]', 'Dryer', in_array('Dryer', $room->amenities)) !!}   
               {!! Form::label('amenities', 'Dryer', ['class' => 'control-label']) !!}                          
           </div>
-          <div>
+          <div class="checkbox checkbox-success">
               {!! Form::checkbox('amenities[]', 'Internet', in_array('Internet', $room->amenities)) !!}   
               {!! Form::label('amenities', 'Internet', ['class' => 'control-label']) !!}                          
           </div>
-          <div>
+          <div class="checkbox checkbox-success">
               {!! Form::checkbox('amenities[]', 'Wifi', in_array('Wifi', $room->amenities)) !!}   
               {!! Form::label('amenities', 'Wifi', ['class' => 'control-label']) !!}                          
           </div>
