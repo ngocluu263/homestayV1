@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration {
 			$table->boolean('is_admin')->default(0);
 			$table->integer('user_type')->unsigned();
 			// $table->boolean('delete')->default(0);
+			$table->string('photo');
 			$table->rememberToken();
 			$table->timestamps();
 			// $table->string('phone')->default('');

@@ -18,28 +18,27 @@
 
       <div class="col-md-9">
           <div class="form-group">
-              <div>
-                  {!! Form::checkbox('amenities[]', 'Meals', in_array('Meals', $room->amenities)) !!}   
-                  {!! Form::label('amenities', 'Meals', ['class' => 'control-label']) !!}              
+              <div class="checkbox checkbox-success">
+                  <input id="me" name="amenities[]" value="Meals" type="checkbox" <?php if(in_array('Meals', $room->amenities)) echo 'checked="checked"'; ?> >
+                  <label for="me" class="control-label">Meals</label>
               </div>
-              <div>
-                  {!! Form::checkbox('amenities[]', 'Transportation', in_array('Transportation', $room->amenities)) !!}   
-                  {!! Form::label('amenities', 'Transportation', ['class' => 'control-label']) !!}                          
+              <div class="checkbox checkbox-success">
+                  <input id="tr" name="amenities[]" value="Transportation" type="checkbox" <?php if(in_array('Transportation', $room->amenities)) echo 'checked="checked"'; ?> >
+                  <label for="tr" class="control-label">Transportation</label>
               </div>
-              <div>
-                  {!! Form::checkbox('amenities[]', 'Language lesson', in_array('Language lesson', $room->amenities)) !!}   
-                  {!! Form::label('amenities', 'Language lesson', ['class' => 'control-label']) !!}                          
+              <div class="checkbox checkbox-success">
+                  <input id="la" name="amenities[]" value="Language lesson" type="checkbox" <?php if(in_array('Language lesson', $room->amenities)) echo 'checked="checked"'; ?> >
+                  <label for="la" class="control-label">Language lesson</label>
               </div>
-              <div>
-                  {!! Form::checkbox('amenities[]', 'Airport pick-up', in_array('Airport pick-up', $room->amenities)) !!}   
-                  {!! Form::label('amenities', 'Airport pick-up', ['class' => 'control-label']) !!}                          
+              <div class="checkbox checkbox-success">
+                  <input id="ai" name="amenities[]" value="Airport pick-up" type="checkbox" <?php if(in_array('Airport pick-up', $room->amenities)) echo 'checked="checked"'; ?> >
+                  <label for="ai" class="control-label">Airport pick-up</label>
               </div>
-              <div>
-                  {!! Form::checkbox('amenities[]', 'Legal guardianship', in_array('Legal guardianship', $room->amenities)) !!}   
-                  {!! Form::label('amenities', 'Legal guardianship', ['class' => 'control-label']) !!}                          
+              <div class="checkbox checkbox-success">
+                  <input id="le" name="amenities[]" value="Legal guardianship" type="checkbox" <?php if(in_array('Legal guardianship', $room->amenities)) echo 'checked="checked"'; ?> >
+                  <label for="le" class="control-label">Legal guardianship</label>
               </div>
           </div>
-
       </div>
   </div>
   <!-- daily services row end -->
@@ -58,35 +57,33 @@
               <input id="tv" name="amenities[]" value="Tv" type="checkbox" <?php if(in_array('Tv', $room->amenities)) echo 'checked="checked"'; ?> >
               <label for="tv" class="control-label">Tv</label>
           </div>
-
           <div class="checkbox checkbox-success">
               <input id="ac" name="amenities[]" value="Air Conditioning" type="checkbox" <?php if(in_array('Air Conditioning', $room->amenities)) echo 'checked="checked"'; ?> >
               <label for="ac" class="control-label">Air Conditioning</label>
           </div>
-
           <div class="checkbox checkbox-success">
-              {!! Form::checkbox('amenities[]', 'Heating', in_array('Heating', $room->amenities)) !!}   
-              {!! Form::label('amenities', 'Heating', ['class' => 'control-label']) !!}                          
+              <input id="he" name="amenities[]" value="Heating" type="checkbox" <?php if(in_array('Heating', $room->amenities)) echo 'checked="checked"'; ?> >
+              <label for="he" class="control-label">Heating</label>
           </div>
           <div class="checkbox checkbox-success">
-              {!! Form::checkbox('amenities[]', 'Kitchen', in_array('Kitchen', $room->amenities)) !!}   
-              {!! Form::label('amenities', 'Kitchen', ['class' => 'control-label']) !!}                          
+              <input id="ki" name="amenities[]" value="Kitchen" type="checkbox" <?php if(in_array('Kitchen', $room->amenities)) echo 'checked="checked"'; ?> >
+              <label for="ki" class="control-label">Kitchen</label>
           </div>
           <div class="checkbox checkbox-success">
-              {!! Form::checkbox('amenities[]', 'Washer', in_array('Washer', $room->amenities)) !!}   
-              {!! Form::label('amenities', 'Wahser', ['class' => 'control-label']) !!}                          
+              <input id="wa" name="amenities[]" value="Washer" type="checkbox" <?php if(in_array('Washer', $room->amenities)) echo 'checked="checked"'; ?> >
+              <label for="wa" class="control-label">Washer</label>
           </div>
           <div class="checkbox checkbox-success">
-              {!! Form::checkbox('amenities[]', 'Dryer', in_array('Dryer', $room->amenities)) !!}   
-              {!! Form::label('amenities', 'Dryer', ['class' => 'control-label']) !!}                          
+              <input id="dr" name="amenities[]" value="Dryer" type="checkbox" <?php if(in_array('Dryer', $room->amenities)) echo 'checked="checked"'; ?> >
+              <label for="dr" class="control-label">Dryer</label>
           </div>
           <div class="checkbox checkbox-success">
-              {!! Form::checkbox('amenities[]', 'Internet', in_array('Internet', $room->amenities)) !!}   
-              {!! Form::label('amenities', 'Internet', ['class' => 'control-label']) !!}                          
+              <input id="in" name="amenities[]" value="Internet" type="checkbox" <?php if(in_array('Internet', $room->amenities)) echo 'checked="checked"'; ?> >
+              <label for="in" class="control-label">Internet</label>
           </div>
           <div class="checkbox checkbox-success">
-              {!! Form::checkbox('amenities[]', 'Wifi', in_array('Wifi', $room->amenities)) !!}   
-              {!! Form::label('amenities', 'Wifi', ['class' => 'control-label']) !!}                          
+              <input id="wi" name="amenities[]" value="Wifi" type="checkbox" <?php if(in_array('Wifi', $room->amenities)) echo 'checked="checked"'; ?> >
+              <label for="wi" class="control-label">Wifi</label>
           </div>
 
       </div>
@@ -103,25 +100,17 @@
 
       <div class="col-md-9">
           <div class="form-group">
-              <div>
-                  {!! Form::checkbox('amenities[]', 'Pool', in_array('Pool', $room->amenities)) !!}   
-                  {!! Form::label('amenities', 'Pool', ['class' => 'control-label']) !!}                         
-              </div>     
-              <div>
-                  {!! Form::checkbox('amenities[]', 'Gym', in_array('Gym', $room->amenities)) !!}   
-                  {!! Form::label('amenities', 'Gym', ['class' => 'control-label']) !!}                          
+              <div class="checkbox checkbox-success">
+                  <input id="po" name="amenities[]" value="Pool" type="checkbox" <?php if(in_array('Pool', $room->amenities)) echo 'checked="checked"'; ?> >
+                  <label for="po" class="control-label">Pool</label>
               </div>
-              <div>
-                  {!! Form::checkbox('amenities[]', 'Elevator', in_array('Elevator', $room->amenities)) !!}   
-                  {!! Form::label('amenities', 'Elevator', ['class' => 'control-label']) !!}                          
+              <div class="checkbox checkbox-success">
+                  <input id="gy" name="amenities[]" value="Gym" type="checkbox" <?php if(in_array('Gym', $room->amenities)) echo 'checked="checked"'; ?> >
+                  <label for="gy" class="control-label">Gym</label>
               </div>
-              <div>
-                  {!! Form::checkbox('amenities[]', 'Indoor Fireplace', in_array('Indoor Fireplace', $room->amenities)) !!}   
-                  {!! Form::label('amenities', 'Indoor Fireplace', ['class' => 'control-label']) !!}                          
-              </div>
-              <div>
-                  {!! Form::checkbox('amenities[]', 'Free Parking on Premises', in_array('Free Parking on Premises', $room->amenities)) !!}   
-                  {!! Form::label('amenities', 'Free Parking on Premises', ['class' => 'control-label']) !!}                          
+              <div class="checkbox checkbox-success">
+                  <input id="fp" name="amenities[]" value="Free Parking" type="checkbox" <?php if(in_array('Free Parking', $room->amenities)) echo 'checked="checked"'; ?> >
+                  <label for="fp" class="control-label">Free Parking</label>
               </div>
           </div>
       </div>

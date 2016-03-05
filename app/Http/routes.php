@@ -46,6 +46,8 @@ Route::controller('password', 'PasswordController');
 
 Route::get('host/profile', [
     'as' => 'host_profile', 'uses' => 'Host\HostController@profile']);
+Route::get('host/profile_photo', [
+    'as' => 'host_profile_photo', 'uses' => 'Host\HostController@profile_photo']);
 Route::post('host/update', [
     'as' => 'host_update', 'uses' => 'Host\HostController@update']);
 
@@ -159,4 +161,5 @@ Route::get('download/grade', [
 //     'as' => 'host_room_upload', 'uses' => 'uploadController@show']);
 
 Route::post('rooms/{id}/photos', 'Host\RoomController@addPhoto');
+Route::post('hosts/{id}/profile_photo', 'Host\HostController@addProfilePhoto');
 Route::delete('photos/{id}', 'Host\RoomController@delPhoto');

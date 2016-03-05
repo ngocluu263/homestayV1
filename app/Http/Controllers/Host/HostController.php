@@ -8,6 +8,12 @@ use App\Http\Requests\HostMesRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use File;
+use Input;
+use Validator;
+use Response;
+
+
 class HostController extends Controller {
 
 	/**
@@ -33,6 +39,52 @@ class HostController extends Controller {
         $host_info->language = explode(",", $host_info->language);
         return view('host.profile', compact('host_info'));
     }
+
+    public function profile_photo()
+    {
+        $user_id = Auth::user()->id;
+        $user = User::where('id', $user_id)->first();
+        return view('host.profile_photo', compact('user'));
+    }
+
+    public function addProfilePhoto($id, Request $request)
+    {
+
+        $input = Input::all();
+ 
+        $rules = array(
+            //'file' => 'image|max:3000',
+            'file' => 'required|mimes:jpg,jpeg,png,bmp|max:3000',
+        );
+ 
+        $validation = Validator::make($input, $rules);
+ 
+        if ($validation->fails()) {
+            return Response::make($validation->errors->first(), 400);
+        }
+
+        $destinationPath = 'uploads/users/' . $id; // upload path
+
+        if (!file_exists($destinationPath)) {
+            $gallery_folder_path = File::makeDirectory($destinationPath, 0777, true, true);
+            $distinationPath = $gallery_folder_path;
+        }
+
+        $extension = Input::file('file')->getClientOriginalExtension(); // getting file extension
+        $fileName = rand(100, 999) . '.' . $extension; // renameing image
+        $upload_success = Input::file('file')->move($destinationPath, $fileName); // uploading file to given path
+
+        $user = User::where('id', $id)->first();
+        $user->photo = "uploads/users/{$id}/{$fileName}";
+        $user->update();
+ 
+        if ($upload_success) {
+            return Response::json('success', 200);
+        } else {
+            return Response::json('error', 400);
+        }
+    }
+
 
     /**
      * 返回修改资料页面

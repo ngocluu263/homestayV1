@@ -14,36 +14,80 @@
 
                 @include('errors.list')
 
+                <div class="row">
 
-                <div class="form-group">
-                    {!! Form::model($room = new \App\Room, ['url' => 'host/room/', 'class' => 'form-horizontal']) !!}
-                        
-                        <div class="form-group">
-                            {!! Form::label('house_type', 'House Type: ', ['class' => 'control-label col-md-2']) !!}
-                            <div class="col-md-4">
-                                {!! Form::select('house_type', ['1' => 'House', '2' => 'Apartment', '3' => 'Condo', '4' => 'Town House', '5' => 'Other'], Auth::user()->house_type, ['class' => 'form-control']) !!}
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            {!! Form::label('room_type', 'Room Type: ', ['class' => 'control-label col-md-2']) !!}
-                            <div class="col-md-4">
-                                {!! Form::select('room_type', ['1' => 'Private room', '2' => 'Shared room', '3' => 'Entire house'], Auth::user()->room_type, ['class' => 'form-control']) !!}
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            {!! Form::label('city', 'City: ', ['class' => 'control-label col-md-2']) !!}
-                            <div class="col-md-4">
-                                {!! Form::text('city', null, ['class' => 'form-control']) !!}
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-6">
-                                {!! Form::submit('Add New Room', ['class' => 'btn btn-success form-control']) !!}
-                            </div>
-                        </div>
-                        
+
+
+
+  
+
+
                     
-                    {!! Form::close() !!}
+    <button type="button" class="button button-primary">Option 2</button>
+    <button type="button" class="button button-primary">Option 3</button>
+     <span class="button-dropdown button-dropdown-primary" data-buttons="dropdown">
+      <a href="#" class="button button-primary"> Select Me <i class="fa fa-caret-down"></i></a>
+ 
+      <ul class="button-dropdown-list is-below">
+        <li><a href="http://www.bootcss.com/">Option Link 1</a></li>
+        <li><a href="http://www.bootcss.com/">Option Link 2</a></li>
+        <li class="button-dropdown-divider"><a href="#">Option Link 3</a></li>
+      </ul>
+    </span>
+
+      <span class="button-dropdown" data-buttons="dropdown">
+    <button class="button button-rounded">
+      Select Me <i class="fa fa-caret-down"></i>
+    </button>
+ 
+    <ul class="button-dropdown-list">
+      <li><a href="http://www.bootcss.com/">Option Link 1</a></li>
+      <li><a href="http://www.bootcss.com/">Option Link 2</a></li>
+      <li class="button-dropdown-divider">
+        <a href="#">Option Link 3</a>
+      </li>
+    </ul>
+  </span>
+
+
+
+
+                    <div class="col-md-6">
+                        {!! Form::model($room = new \App\Room, ['url' => 'host/room/', 'class' => 'form-horizontal']) !!}
+                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {!! Form::label('house_type', 'House Type: ', ['class' => 'control-label']) !!}
+                                </div>
+                                <div class="row">
+                                <div class="col-md-4">
+                                    {!! Form::button('House', ['class' => 'form-control button button-primary', 'name'], null, ['class' => 'form-control button button-primary', 'id' => 'house']) !!}
+                                </div>
+                                <div class="col-md-4">
+                                    {!! Form::button('House', array('class' => 'form-control button button-primary')) !!}
+                                </div>
+                                <div class="col-md-4">
+                                    {!! Form::button('House', array('name' => 'house_type', 'class' => 'form-control button button-primary')) !!}
+                                </div>
+                                   </div>                   
+                                <div class="col-md-12">
+                                    {!! Form::label('room_type', 'Room Type: ', ['class' => 'control-label']) !!}
+                                    {!! Form::select('room_type', ['1' => 'Private room', '2' => 'Shared room', '3' => 'Entire house'], Auth::user()->room_type, ['class' => 'form-control']) !!}
+                                </div>
+                     
+                                <div class="col-md-12">
+                                    {!! Form::label('city', 'City: ', ['class' => 'control-label']) !!}
+                                    {!! Form::text('city', null, ['class' => 'form-control']) !!}
+                                </div>
+
+                                <div class="col-md-6">
+                                    <hr class="divider">
+                                    {!! Form::submit('Add New Room', ['class' => 'button button-3d button-primary button-rounded']) !!}
+                                </div>
+                            </div>
+                        
+                        {!! Form::close() !!}
+                    </div>
                 </div>
             </div>
             

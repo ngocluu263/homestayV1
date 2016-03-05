@@ -32,6 +32,15 @@ body {
   line-height: 22px;
 }
 
+
+.profile-header-img > img.img-circle {
+    width: 30px;
+    height: 30px;
+    border: 2px solid white;
+    margin-top:-7px;
+}
+
+
 h1,
 h2,
 h3,

@@ -104,42 +104,51 @@
                             <div class="form-group">
                                 {!! Form::label('language', 'Language SKills: ', ['class' => 'col-sm-3 control-label']) !!}   
                                 <div class="col-sm-8">
-  
-                                    {!! Form::checkbox('language[]', 'English', in_array('English', $host_info->language)) !!}
-                                    {!! Form::label('language', 'English', ['class' => 'control-label']) !!}
 
-                                    {!! Form::checkbox('language[]', 'Spanish', in_array('English', $host_info->language)) !!}
-                                    {!! Form::label('language', 'Spanish', ['class' => 'control-label']) !!}
-
-                                    {!! Form::checkbox('language[]', 'Chinese', in_array('English', $host_info->language)) !!}
-                                    {!! Form::label('language', 'Chinese', ['class' => 'control-label']) !!}
-
-                                    {!! Form::checkbox('language[]', 'Vietnamese', in_array('English', $host_info->language)) !!}
-                                    {!! Form::label('language', 'Vietnmaese', ['class' => 'control-label']) !!}
-
-                                    {!! Form::checkbox('language[]', 'Filipino', in_array('English', $host_info->language)) !!}
-                                    {!! Form::label('language', 'Filipino', ['class' => 'control-label']) !!}
-
-                                    {!! Form::checkbox('language[]', 'French', in_array('English', $host_info->language)) !!}
-                                    {!! Form::label('language', 'French: ', ['class' => 'control-label']) !!}
-
-                                    {!! Form::checkbox('language[]', 'German', in_array('English', $host_info->language)) !!}
-                                    {!! Form::label('language', 'German', ['class' => 'control-label']) !!}
-
-                                    {!! Form::checkbox('language[]', 'Indian', in_array('English', $host_info->language)) !!}
-                                    {!! Form::label('language', 'Indian', ['class' => 'control-label']) !!}
-
-                                    {!! Form::checkbox('language[]', 'Arabic', in_array('English', $host_info->language)) !!}
-                                    {!! Form::label('language', 'Arabic', ['class' => 'control-label']) !!}
-
-                                    {!! Form::checkbox('language[]', 'Korean', in_array('English', $host_info->language)) !!}
-                                    {!! Form::label('language', 'Korean', ['class' => 'control-label']) !!}
-
-                                    {!! Form::checkbox('language[]', 'Portuguese', in_array('English', $host_info->language)) !!}
-                                    {!! Form::label('language', 'Portuguese', ['class' => 'control-label']) !!}
-
-                                    {!! Form::checkbox('language[]', 'Other', in_array('English', $host_info->language)) !!}
-                                    {!! Form::label('language', 'Other', ['class' => 'control-label']) !!}
+                                    <div class="col-sm-3 checkbox checkbox-success">
+                                        <input id="en" name="language[]" value="English" type="checkbox" <?php if(in_array('English', $host_info->language)) echo 'checked="checked"'; ?> >
+                                        <label for="en" class="control-label">English</label>
+                                    </div>
+                                    <div class="col-sm-3 checkbox checkbox-success">
+                                        <input id="sp" name="language[]" value="Spanish" type="checkbox" <?php if(in_array('Spanish', $host_info->language)) echo 'checked="checked"'; ?> >
+                                        <label for="sp" class="control-label">Spanish</label>
+                                    </div>
+                                    <div class="col-sm-3 checkbox checkbox-success">
+                                        <input id="cn" name="language[]" value="Chinese" type="checkbox" <?php if(in_array('Chinese', $host_info->language)) echo 'checked="checked"'; ?> >
+                                        <label for="cn" class="control-label">Chinese</label>
+                                    </div>
+                                    <div class="col-sm-3 checkbox checkbox-success">
+                                        <input id="vi" name="language[]" value="Vietnamese" type="checkbox" <?php if(in_array('Vietnamese', $host_info->language)) echo 'checked="checked"'; ?> >
+                                        <label for="vi" class="control-label">Vietnamese</label>
+                                    </div>
+                                    <div class="col-sm-3 checkbox checkbox-success">
+                                        <input id="fi" name="language[]" value="Filipino" type="checkbox" <?php if(in_array('Filipino', $host_info->language)) echo 'checked="checked"'; ?> >
+                                        <label for="fi" class="control-label">Filipino</label>
+                                    </div>
+                                    <div class="col-sm-3 checkbox checkbox-success">
+                                        <input id="fr" name="language[]" value="French" type="checkbox" <?php if(in_array('French', $host_info->language)) echo 'checked="checked"'; ?> >
+                                        <label for="fr" class="control-label">French</label>
+                                    </div>
+                                    <div class="col-sm-3 checkbox checkbox-success">
+                                        <input id="ge" name="language[]" value="German" type="checkbox" <?php if(in_array('German', $host_info->language)) echo 'checked="checked"'; ?> >
+                                        <label for="ge" class="control-label">German</label>
+                                    </div>
+                                    <div class="col-sm-3 checkbox checkbox-success">
+                                        <input id="in" name="language[]" value="Indian" type="checkbox" <?php if(in_array('Indian', $host_info->language)) echo 'checked="checked"'; ?> >
+                                        <label for="in" class="control-label">Indian</label>
+                                    </div>
+                                    <div class="col-sm-3 checkbox checkbox-success">
+                                        <input id="ko" name="language[]" value="Korean" type="checkbox" <?php if(in_array('Korean', $host_info->language)) echo 'checked="checked"'; ?> >
+                                        <label for="ko" class="control-label">Korean</label>
+                                    </div>
+                                    <div class="col-sm-3 checkbox checkbox-success">
+                                        <input id="po" name="language[]" value="Portuguese" type="checkbox" <?php if(in_array('Portuguese', $host_info->language)) echo 'checked="checked"'; ?> >
+                                        <label for="po" class="control-label">Portuguese</label>
+                                    </div>
+                                    <div class="col-sm-3 checkbox checkbox-success">
+                                        <input id="ot" name="language[]" value="Other" type="checkbox" <?php if(in_array('Other', $host_info->language)) echo 'checked="checked"'; ?> >
+                                        <label for="ot" class="control-label">Other</label>
+                                    </div>
 
                                 </div>
                             </div>
@@ -147,8 +156,6 @@
                             {!! Form::submit('提交', ['class' => 'btn btn-success']) !!}
                         
                         {!! Form::close() !!}
-
-                    
                         
                     </div>
                 </div>
@@ -156,11 +163,8 @@
             </div>
         </div>
 
-        @include('host.update_info')
-
     </div>
 
 @stop
-
 
 

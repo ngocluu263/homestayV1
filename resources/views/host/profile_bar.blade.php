@@ -5,16 +5,13 @@
         <li class="active">
             <a href="/host/profile">Edit Profile</a>
         </li>
-
         <li>
-            <a href="#profileImg-tab" data-toggle="tab">Edit profile picture</a>
+            <a href="/host/profile_photo">Profile Photo</a>
         </li>
         <li>
             <a href="#security-tab" data-toggle="tab">Security</a>
         </li>
     </ul>
-
-    <hr class="divider">
 
 </div>
 <!-- Tab col-md-3 left side end-->

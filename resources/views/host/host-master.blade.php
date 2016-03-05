@@ -28,6 +28,8 @@
 
     <link rel="stylesheet" href="{{ asset('/css/jquery-gallery.min.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('/css/buttons.css') }}">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -150,6 +152,7 @@
 <!-- jQuery -->
 <script type="text/javascript" src="/js/all.js"></script>
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script src="/js/buttons.js"></script>
 <script src="/js/sweetalert.min.js"></script>
 <script src="/js/jquery-gallery.min.js"></script>
 

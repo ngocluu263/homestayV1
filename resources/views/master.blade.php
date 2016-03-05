@@ -26,13 +26,13 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="sidebar-left.html">Host</a></li>
+								<li><a href="#">Host</a></li>
 								<li class="active"><a href="sidebar-right.html">Guest</a></li>
 							</ul>
 						</li>
 					@else
 						@if (Auth::user()->user_type == 1)
-							<li><a href="{{ url('/host/home') }}">Host</a></li>
+							<li><a href="{{ url('/rooms') }}">Host</a></li>
 						@else
 							<li><a href="{{ url('/stu/home') }}">Guest</a></li>
 						@endif
@@ -43,7 +43,14 @@
 						<li><a href="/login">Log In</a></li>
 					@else
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"> {{ Auth::user()->email }} <span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<div class="profile-header-img">
+									{{ Auth::user()->email }}	
+									@if (Auth::user()->photo)
+										<img class="img-circle" src="/{{ Auth::user()->photo }}" alt="">
+									@endif
+								</div>
+							</a>
 							<ul class="dropdown-menu" role="menu">
 								@if (Auth::user()->user_type == 1)
 									<li><a href="{{ url('/host/profile') }}">Edit Profile</a></li>

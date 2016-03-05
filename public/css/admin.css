@@ -141,7 +141,7 @@ ul.alert-dropdown {
         background-color: #000 !important;
         color: rgb(98,101,103);
         font-weight: bold;
-        font-size: 18px;
+        margin-left: 10px;
     }
 }
 

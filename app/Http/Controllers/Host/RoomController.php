@@ -1,7 +1,6 @@
 <?php namespace App\Http\Controllers\Host;
 
 use Auth;
-use File;
 use App\User;
 use App\Room;
 use App\Photo;
@@ -11,6 +10,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use File;
 use Input;
 use Validator;
 use Response;
@@ -297,9 +297,6 @@ class RoomController extends Controller {
         } else {
             return Response::json('error', 400);
         }
-
-        
-
     }
 
     public function delPhoto($id)
