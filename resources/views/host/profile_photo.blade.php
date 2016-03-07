@@ -43,7 +43,7 @@
 @stop
 
 
-@section('dropzoneJs')
+@section('js')
 
     <script src="/js/dropzone.js"></script>
 

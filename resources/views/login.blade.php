@@ -1,99 +1,103 @@
-@extends('master')
+@include('public.header')
 
-@section('title')
-    Welcome
-@stop
 
-@section('content')
-<header id="head" class="secondary"></header>
+<div class="row">
+    
+    <!-- Article main content -->
+    <article class="col-xs-12 maincontent">
+        <header class="page-header">
+            <h1 class="page-title text-center" style="color:black">
+                <a href="/">Logo</a>
+            </h1>
+        </header>
+        
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-body">
 
-    <!-- container -->
-    <div class="container">
+                    
+                    <h3 class="thin text-center">Sign in to your account</h3>
+                    <p class="text-center text-muted">Don't have an account <a href="/register">Register</a></p>
+                    <hr>
+                    
+                    @include('errors.list')
 
-        <ol class="breadcrumb">
-            <li><a href="/">Home</a></li>
-            <li class="active">Login</li>
-        </ol>
-
-        <div class="row" style="margin-top:10px;">
-            
-            <!-- Article main content -->
-            <article class="col-xs-12 maincontent">
-<!--                 <header class="page-header">
-                    <h1 class="page-title">Login</h1>
-                </header> -->
-                
-                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-
-                            
-                            <h3 class="thin text-center">Sign in to your account</h3>
-                            <p class="text-center text-muted">Lorem ipsum dolor sit amet, <a href="/register">Register</a> adipisicing elit. Quo nulla quibusdam cum doloremque incidunt nemo sunt a tenetur omnis odio. </p>
-                            <hr>
-                            
-                            @include('errors.list')
-
-                            <!-- <form method="get" action="/login">
-                                <div class="top-margin">
-                                    <label>Email <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control">
-                                </div>
-                                <div class="top-margin">
-                                    <label>Password <span class="text-danger">*</span></label>
-                                    <input type="password" class="form-control">
-                                </div>
-
-                                <hr>
-
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <b><a href="">Forgot password?</a></b>
-                                    </div>
-                                    <div class="col-lg-4 text-right">
-                                        <button class="btn btn-action" type="submit">Login</button>
-                                    </div>
-                                </div>
-                            </form> -->
-
-                            {!! Form::open(['url' => '/login', 'class' => 'form-horizontal', 'role' => 'form']) !!}
-                                <div class="form-group">
-                                    {!! Form::label('id', 'Email', ['class' => 'col-md-4 control-label']) !!}
-                                    <div class="col-md-6">
-                                        {!! Form::text('email', old('email'), ['class' => 'form-control', 'required']) !!}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    {!! Form::label('password', 'password', ['class' => 'col-md-4 control-label']) !!}
-                                    <div class="col-md-6">
-                                        {!! Form::password('password', ['class' => 'form-control', 'required']) !!}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-6 col-md-offset-4">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" name="remember"> Remember Me
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-12 col-md-offset-4">
-                                        {!! Form::submit('Login', ['class' => 'btn btn-primary']) !!}
-                                        <a class="btn btn-link" href="{{ url('/password/email') }}">Forget password？</a>
-                                    </div>
-                                </div>
-                            {!! Form::close() !!}
-                        
+                    {!! Form::open(['url' => '/login', 'class' => 'form-horizontal', 'role' => 'form']) !!}
+                        <div class="form-group">
+                            {!! Form::label('id', 'Email', ['class' => 'col-md-4 control-label']) !!}
+                            <div class="col-md-6">
+                                {!! Form::text('email', old('email'), ['class' => 'form-control', 'required']) !!}
+                            </div>
                         </div>
-                    </div>
-
-                </div>
+                        <div class="form-group">
+                            {!! Form::label('password', 'password', ['class' => 'col-md-4 control-label']) !!}
+                            <div class="col-md-6">
+                                {!! Form::password('password', ['class' => 'form-control', 'required']) !!}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-success" name="remember"> Remember Me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12 col-md-offset-4">
+                                {!! Form::submit('Log in', ['class' => 'button button-3d button-primary button-rounded']) !!}
+                                <a class="btn btn-link" href="{{ url('/password/email') }}">Forget password？</a>
+                            </div>
+                        </div>
+                    {!! Form::close() !!}
                 
-            </article>
-            <!-- /Article -->
+                </div>
+            </div>
 
         </div>
-    </div>  <!-- /container -->
-@stop
+        
+    </article>
+    <!-- /Article -->
+
+</div>
+
+<!-- Highlights - jumbotron -->
+<div class="jumbotron top-space">
+
+    <h3 class="text-center thin">Reasons to use this template</h3>
+    
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-3 col-sm-6 highlight">
+                <div class="h-caption"><h4><i class="fa fa-cogs fa-5"></i>Guidance</h4></div>
+                <div class="h-body text-center">
+                    <p>We provide guidance on how to become a host family and what to expect as a guest</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 highlight">
+                <div class="h-caption"><h4><i class="fa fa-flash fa-5"></i>Fast & Easy</h4></div>
+                <div class="h-body text-center">
+                    <p>You are only one click away from being connected with your host/guest</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 highlight">
+                <div class="h-caption"><h4><i class="fa fa-heart fa-5"></i>Professional Team</h4></div>
+                <div class="h-body text-center">
+                    <p>Our team will assist you in every way to provide you the best hosting experience</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 highlight">
+                <div class="h-caption"><h4><i class="fa fa-smile-o fa-5"></i>Security & Privacy</h4></div>
+                <div class="h-body text-center">
+                    <p>You are only one click away from being connected with your host/guest</p>
+                </div>
+            </div>
+        </div> <!-- /row  -->
+  
+    </div>
+    <!-- /Highlights -->
+
+</div>
+

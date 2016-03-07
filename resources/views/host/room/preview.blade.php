@@ -58,19 +58,6 @@
             <div class="row">
                 
                 <div class="col-sm-2">
-
-<!--                     @foreach ($room->photos as $photo)
-
-                        <form method="POST" action="/photos/{{ $photo->id }}" class="col-md-3">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                            <button type="submit">Delete</button>
-                        </form>
-                        <a href="/{{ $photo->path }}" title="Banana" data-gallery>
-                            <img src="/{{ $photo->path }}" style="width:100px; height:100px;">
-                        </a>
-
-                    @endforeach -->
                     @if (!empty($photo)) 
                         <img class="img-circle img-responsive img-center" src="/{{ $photo->path }}" alt="">                   
                     @endif
@@ -127,7 +114,7 @@
                             </div>
                        
                         </div>
-                    
+
                     </div>
                 </div>               
             </div>
@@ -354,4 +341,18 @@
     </section>
 
 @include('public.footer')
+
+@section('js')
+    <script src="/js/stickUp.min.js"></script>
+
+    <script type="text/javascript">
+        jQuery(function($) {
+                $(document).ready( function() {
+                  //enabling stickUp on the '.navbar-wrapper' class
+                  $('.navbar-wrapper').stickUp();
+                });
+              });
+    </script>
+
+@stop
 

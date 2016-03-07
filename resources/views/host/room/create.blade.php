@@ -16,7 +16,7 @@
 
                 <div class="row">
 
-
+<!-- 
 
 
   
@@ -25,6 +25,7 @@
                     
     <button type="button" class="button button-primary">Option 2</button>
     <button type="button" class="button button-primary">Option 3</button>
+     
      <span class="button-dropdown button-dropdown-primary" data-buttons="dropdown">
       <a href="#" class="button button-primary"> Select Me <i class="fa fa-caret-down"></i></a>
  
@@ -36,6 +37,7 @@
     </span>
 
       <span class="button-dropdown" data-buttons="dropdown">
+    
     <button class="button button-rounded">
       Select Me <i class="fa fa-caret-down"></i>
     </button>
@@ -49,27 +51,18 @@
     </ul>
   </span>
 
-
+ -->
 
 
                     <div class="col-md-6">
                         {!! Form::model($room = new \App\Room, ['url' => 'host/room/', 'class' => 'form-horizontal']) !!}
                             
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12">                                                                                                  
                                     {!! Form::label('house_type', 'House Type: ', ['class' => 'control-label']) !!}
+                                    {!! Form::select('house_type', ['1' => 'House', '2' => 'Apartment', '3' => 'Condo', '4' => 'Other'], Auth::user()->room_type, ['class' => 'form-control', 'data-toggle' => 'tooltip', 'title' => 'Choose the type of your space']) !!}
                                 </div>
-                                <div class="row">
-                                <div class="col-md-4">
-                                    {!! Form::button('House', ['class' => 'form-control button button-primary', 'name'], null, ['class' => 'form-control button button-primary', 'id' => 'house']) !!}
-                                </div>
-                                <div class="col-md-4">
-                                    {!! Form::button('House', array('class' => 'form-control button button-primary')) !!}
-                                </div>
-                                <div class="col-md-4">
-                                    {!! Form::button('House', array('name' => 'house_type', 'class' => 'form-control button button-primary')) !!}
-                                </div>
-                                   </div>                   
+                  
                                 <div class="col-md-12">
                                     {!! Form::label('room_type', 'Room Type: ', ['class' => 'control-label']) !!}
                                     {!! Form::select('room_type', ['1' => 'Private room', '2' => 'Shared room', '3' => 'Entire house'], Auth::user()->room_type, ['class' => 'form-control']) !!}

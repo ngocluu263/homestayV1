@@ -80,13 +80,28 @@
     <script src="/js/headroom.min.js"></script>
 	<script src="/js/jQuery.headroom.min.js"></script>
 	<script src="/js/template.js"></script>
-	<script src="/js/jquery.shorten.min.js"></script>
 
-	<!-- gallery !!!require!!!--> 
+	<!-- Show more/less -->
+	<script src="/js/jquery.shorten.min.js"></script>
+	<!-- Show more/less END -->
+	
+	<!-- Gallery Display--> 
 	<script src="/js/jquery-gallery.min.js"></script>
 	<!-- gallery 去掉可以显示全屏--> 
 	<!-- <script src="/js/bootstrap-image-gallery.min.js"></script> -->
+	<!-- Gallery END-->
+
 	<script src="/js/sweetalert.min.js"></script>
+
+	<!-- Google Maps Geocomplete -->
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+	<script type="text/javascript" src="http://maps.google.cn/maps/api/js?sensor=false&libraries=places"></script>
+	<script src="/js/googleMaps.js"></script>
+	<script src="/js/jquery.geocomplete.js"></script>
+	<!-- Google Maps Geocomplete END -->
+
+
+        
 
 	<script type="text/javascript">
 
@@ -100,7 +115,6 @@
 
 	</script>
 
-	@include('flash')
 
 
 

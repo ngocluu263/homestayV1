@@ -30,7 +30,7 @@ class CreateRoomsTable extends Migration {
 			$table->string('address2');
 			$table->string('zip');
 			$table->string('avail_from');
-			$table->string('min_days');
+			$table->string('min_days')->default('1');
 			$table->string('m_price');
 			$table->string('d_price');
 			$table->string('amenities');					

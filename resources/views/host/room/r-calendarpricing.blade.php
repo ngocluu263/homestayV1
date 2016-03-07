@@ -14,7 +14,7 @@
 
         <div class="col-md-6">
             {!! Form::label('avail_from', 'Room available from: ', ['class' => 'control-label']) !!}
-            {!! Form::text('avail_from', null, ['class' => 'form-control', 'id' => 'Arrival_datepicker', 'required']) !!}
+            {!! Form::text('avail_from', null, ['class' => 'form-control', 'id' => 'Arrival_datepicker', 'style' => 'position:relative;z-index:100', 'required']) !!}
         </div>
         <div class="col-md-6">
             {!! Form::label('min_days', 'Minmiun days to stay: ', ['class' => 'control-label']) !!}

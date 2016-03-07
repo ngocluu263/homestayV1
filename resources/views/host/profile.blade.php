@@ -153,7 +153,7 @@
                                 </div>
                             </div>
                             
-                            {!! Form::submit('提交', ['class' => 'btn btn-success']) !!}
+                            {!! Form::submit('Save', ['class' => 'btn btn-success']) !!}
                         
                         {!! Form::close() !!}
                         

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author"   content="Tigris and Partners LLC">
 
     <title> @yield('title') </title>
 
@@ -21,7 +21,7 @@
     <!-- file upload -->
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/dropzone.css') }}">
 
-    <!-- Custom CSS -->
+    <!-- Custom CSS for Host-master-blade -->
     <link href="{{ asset('/css/admin.css') }}" rel="stylesheet">
 
     <link href="{{ asset('/css/sweetalert.css') }}" rel="stylesheet">
@@ -57,6 +57,19 @@
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
+      
+             
+                <li class="message-preview" style="margin-top:8px;">
+                    <div class="col-md-12">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for ... ">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" style="border-radius:0; background:rgb(245,245,245)">Search</button>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+                    
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu message-dropdown">
@@ -118,7 +131,7 @@
         <div id="page-wrapper">
 
             <div class="col-md-10">
-                <ol class="breadcrumb" style="padding-top:15px; padding-bottom:15px;">
+                <ol class="breadcrumb" style="padding-top:15px; padding-bottom:15px; margin-top:60px; border-radius:0">
                     <li>
                         <i class="fa fa-dashboard"></i>  <a href="/host/profile">Dashboard</a>
                     </li>
@@ -156,9 +169,8 @@
 <script src="/js/sweetalert.min.js"></script>
 <script src="/js/jquery-gallery.min.js"></script>
 
-@yield('dropzoneJs')
+@yield('js')
 
-@include('flash')
 
 <!-- More content link -->
 <script>

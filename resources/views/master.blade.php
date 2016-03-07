@@ -21,7 +21,7 @@
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
 					@if (Auth::guest())
-						<li class="active"><a href="#" class="btn">Become a Host</a></li>
+						<li class="active"><a href="/rooms/new" class="btn">Become a Host</a></li>
 						<li><a href="#">About</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
@@ -32,7 +32,22 @@
 						</li>
 					@else
 						@if (Auth::user()->user_type == 1)
-							<li><a href="{{ url('/rooms') }}">Host</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Host</a>
+
+								<ul class="dropdown-menu" role="menu">
+									@if (Auth::user()->user_type == 1)
+										<li><a href="{{ url('/host/profile') }}">Dashboard</a></li>
+										<li><a href="{{ url('/rooms') }}">Manage Listings</a></li>
+										<li><a href="{{ url('/rooms/new') }}">List Your Space</a></li>
+										<li><a href="{{ url('') }}">Your Reservations</a></li>
+									@endif
+									@if (Auth::user()->user_type == 2)
+										<li><a href="{{ url('/stu/edit') }}">修改Stu信息</a></li>
+									@endif
+									<li><a href="{{ url('/logout') }}">Log Out</a></li>
+								</ul>
+							</li>
 						@else
 							<li><a href="{{ url('/stu/home') }}">Guest</a></li>
 						@endif
@@ -70,11 +85,11 @@
 	</div> 
 	<!-- /.navbar -->
 
-	<div class="container">
-		@include('flash')
-	</div>
+	<!-- <div class="container"> include('flash') -->
+	
+	<!-- </div> -->
 
 	@yield('content')
 
 
-@include('public.footer')
+@extends('public.footer')

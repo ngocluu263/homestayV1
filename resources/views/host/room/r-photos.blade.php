@@ -57,7 +57,7 @@
                 <form method="POST" action="/photos/{{ $photo->id }}" class="col-md-3">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
-                    <button type="submit" class="btn btn-sm btn-default">Delete</button>
+                    <button type="submit" class="button button-square button-tiny"><i class="fa fa-trash-o"></i></button>
                 </form>
         		<a href="/{{ $photo->path }}" title="" data-gallery class="thumbnail">
 					<img src="/{{ $photo->path }}" style="width:100px; height:100px;">
@@ -71,7 +71,7 @@
 </div>
 <!-- Photos tab end -->
 
-@section('dropzoneJs')
+@section('js')
 
     <script src="/js/dropzone.js"></script>
 
@@ -86,9 +86,10 @@
                 _token: token
               }
         });
-        Dropzone.options.myAwesomeDropzone = {
+        Dropzone.options.myDropzone = {
             paramName: "file", // The name that will be used to transfer the file
             maxFilesize: 3, // MB
+            acceptedFiles: '.jpg, .jpeg, .png, .bmp',
             addRemoveLinks: true,
             accept: function(file, done) {
 

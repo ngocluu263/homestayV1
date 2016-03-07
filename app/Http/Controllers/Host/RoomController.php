@@ -268,8 +268,8 @@ class RoomController extends Controller {
         $input = Input::all();
  
         $rules = array(
-            //'file' => 'image|max:3000',
-            'file' => 'required|mimes:jpg,jpeg,png,bmp|max:3000',
+            'file' => 'image|max:3000',
+            // 'file' => 'required|mimes:jpg,jpeg,png,bmp|max:3000',
         );
  
         $validation = Validator::make($input, $rules);

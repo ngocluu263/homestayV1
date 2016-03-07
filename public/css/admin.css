@@ -7,13 +7,13 @@
 /* Global Styles */
 
 body {
-    margin-top: 100px;
-    background-color: rgb(255,255,255);
+    /*margin-top: 100px;*/
+    background-color: rgba(255, 255, 255, .1);
 }
 
 @media(min-width:768px) {
     body {
-        margin-top: 50px;
+        /*margin-top: 50px;*/
     }
 }
 

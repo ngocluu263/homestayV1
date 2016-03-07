@@ -50,13 +50,7 @@
                                 </button>
                             </td>
                         </tr>              
-
-
                     @endforeach
-                @else
-                    <h3>
-                        <a href="/host/room/create"><button class="btn btn-danger btn-sm">Add New Listings</button></a>
-                    </h3>
                 @endif
             </table>
 
@@ -70,7 +64,11 @@
 
 
 
-@section('dropzoneJs')
+@section('js')
+
+
+    
+
 
     <script type="text/javascript">
 
@@ -89,6 +87,8 @@
             $("#myform").submit();
           });
         })
+
+        
 
     </script>
 
