@@ -13,12 +13,13 @@
 		<div class="col-md-8">
 			<div class="tab-content">
 
+				@include('host.room.r-photos')
 				@include('host.room.r-accommodation')
 				@include('host.room.r-description')
 				@include('host.room.r-location')
 				@include('host.room.r-calendarpricing')
 				@include('host.room.r-amenities')
-				@include('host.room.r-photos')
+				
 
 			</div>
 			<!-- Tab contents -->

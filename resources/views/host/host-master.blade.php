@@ -169,6 +169,13 @@
 <script src="/js/sweetalert.min.js"></script>
 <script src="/js/jquery-gallery.min.js"></script>
 
+<!-- Google Maps Geocomplete -->
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+<script type="text/javascript" src="//maps.google.cn/maps/api/js?sensor=false&libraries=places"></script>
+<script src="/js/googleMaps.js"></script>
+<script src="/js/jquery.geocomplete.js"></script>
+<!-- Google Maps Geocomplete END -->
+
 @yield('js')
 
 

@@ -88,8 +88,8 @@
 @section('js')
 
     <!-- Google Maps Geocomplete -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
-    <script type="text/javascript" src="http://maps.google.cn/maps/api/js?sensor=false&libraries=places"></script>
+    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+    <script type="text/javascript" src="//maps.google.cn/maps/api/js?sensor=false&libraries=places"></script>
     <script src="/js/googleMaps.js"></script>
     <script src="/js/jquery.geocomplete.js"></script>
     <!-- Google Maps Geocomplete END -->
