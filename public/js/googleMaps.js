@@ -18,13 +18,13 @@ $(function(){
 
 
 function modify_add(){
-	$('#country').removeAttr('disabled');
-	$('#street_number').removeAttr('disabled');
-	$('#route').removeAttr('disabled');
-	$('#address2').removeAttr('disabled');
-	$('#city').removeAttr('disabled');
-	$('#state').removeAttr('disabled');
-	$('#zip').removeAttr('disabled');
+	$('#country-input').removeAttr('style');
+	$('#street-input').removeAttr('style');
+  $('#route-input').removeAttr('style');
+	$('#address2').removeAttr('style');
+	$('#city-input').removeAttr('style');
+	$('#state-input').removeAttr('style');
+	$('#zip-input').removeAttr('style');
 }
 
 
@@ -55,17 +55,25 @@ function initialize() {
   });
 }
 
-function formAddress(){
-	  document.getElementById('pac-input').value =
-		  document.getElementById('street_number').value + ' ' +
-		  document.getElementById('route').value + ' ' +
-		  document.getElementById('city').value + ' ' +
-		  document.getElementById('state').value + ' ' +
-		  document.getElementById('zip').value + ' ' +
-		  document.getElementById('country').value;
-}
+// function formAddress(){
+//     document.getElementById('pac-input').value =
+// 		document.getElementById('street_number').value + ' ' +
+// 		document.getElementById('route').value + ' ' +
+// 		document.getElementById('city').value + ' ' +
+// 		document.getElementById('state').value + ' ' +
+// 		document.getElementById('zip').value + ' ' +
+// 		document.getElementById('country').value;
+// }
 
 function codeAddress(){
+
+    document.getElementById('pac-input').value =
+    document.getElementById('street_number').value + ' ' +
+    document.getElementById('route').value + ' ' +
+    document.getElementById('city').value + ' ' +
+    document.getElementById('state').value + ' ' +
+    document.getElementById('zip').value + ' ' +
+    document.getElementById('country').value;
 
   // Fix the bug that map displays partialy
   google.maps.event.trigger(map, "resize");

@@ -24,11 +24,13 @@ class CreateRoomsTable extends Migration {
 			$table->string('house_type');
 			$table->string('room_type');		
 			$table->string('country');
-			$table->string('state');
-			$table->string('city');
-			$table->string('address1');
-			$table->string('address2');
-			$table->string('zip');
+			$table->string('administrative_area_level_1'); // state
+			$table->string('locality');
+			$table->string('route'); // address1
+			$table->string('street_number'); // address 2
+			$table->string('postal_code');
+			$table->string('lat');
+			$table->string('lng');
 			$table->string('avail_from');
 			$table->string('min_days')->default('1');
 			$table->string('m_price');

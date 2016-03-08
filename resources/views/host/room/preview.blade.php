@@ -125,7 +125,6 @@
     <section id="about" class="">
         <div class="container" style="padding-top:20px;">
 
-            <div class="row">
                 <div class="col-md-7">
                 
                     <hr class="divider">
@@ -164,13 +163,8 @@
                             </tbody>              
                         </table>
                     </div>
-                </div>
-            </div>
-            <!-- /.row -->
 
-            <div class="row">
-                <div class="col-md-7">  
-                    <hr class="divider">
+          
                     <div class="col-sm-4">
                         <h4>Amenities</h4>
                     </div>
@@ -183,13 +177,10 @@
                             </tbody>              
                         </table>
                     </div>
-                </div>
-            </div>
-            <!-- /.row -->
+              
+           
 
-            <div class="row">
-                <div class="col-md-7">  
-                    <hr class="divider">
+
                     <div class="col-sm-4">
                         <h4>Prices</h4>
                     </div>
@@ -211,12 +202,10 @@
                             </tbody>              
                         </table>
                     </div>
-                </div>
-            </div>
-            <!-- /.row -->
+               
+            
 
-            <div class="row">
-                <div class="col-md-7">  
+ 
                     <hr class="divider">
                     <div class="col-sm-4">
                         <h4>Availability</h4>
@@ -239,12 +228,11 @@
                             </tbody>              
                         </table>
                     </div>
-                </div>
-            </div>
-            <!-- /.row -->
+              
+              
 
-            <div class="row">
-                <div class="col-md-7">  
+
+            
                     <hr class="divider">
                     <div class="col-sm-4">
                         <h4>Description</h4>
@@ -261,8 +249,15 @@
                         </table>
                     </div>
                 </div>
-            </div>
-            <!-- /.row -->
+                <div class="col-md-4">
+       
+
+                    <div id="map-canvas" style="width:100%;height:300px; margin:0 auto;"></div>
+                    <input type="hidden" id="lat" value="<?php echo $room->lat; ?>" />
+                    <input type="hidden" id="lng" value="<?php echo $room->lng; ?>" />
+
+ 
+                </div>
 
             <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
             <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
@@ -342,17 +337,4 @@
 
 @include('public.footer')
 
-@section('js')
-    <script src="/js/stickUp.min.js"></script>
-
-    <script type="text/javascript">
-        jQuery(function($) {
-                $(document).ready( function() {
-                  //enabling stickUp on the '.navbar-wrapper' class
-                  $('.navbar-wrapper').stickUp();
-                });
-              });
-    </script>
-
-@stop
 

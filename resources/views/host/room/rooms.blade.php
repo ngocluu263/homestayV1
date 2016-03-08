@@ -63,11 +63,7 @@
 @stop
 
 
-
 @section('js')
-
-
-    
 
 
     <script type="text/javascript">

@@ -23,7 +23,10 @@
 	        <div class="input-group">
 	            <input type="text" class="form-control" placeholder="Search for ... " id="geocomplete" style="margin:4px;">
 	            <span class="input-group-btn">
-	                <button class="btn btn-default" type="button" style="border-radius:0; background:rgb(245,245,245)">Search</button>
+                    <form action="{{ url('host/room/') }}" style='display: inline' method="POST">
+                        <input type="hidden" name="_token" value="{{csrf_token()}}"> 
+                        <button class="btn btn-default" type="button" style="border-radius:0; background:rgb(245,245,245)">Search</button>
+                    </form>       
 	            </span>
 	        </div>
 		</div>

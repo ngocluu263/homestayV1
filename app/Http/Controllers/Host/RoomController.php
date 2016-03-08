@@ -69,7 +69,7 @@ class RoomController extends Controller {
         $room->user_id = $user_id;  
         $room->room_type = $request->room_type;
         $room->house_type = $request->house_type;
-        $room->city = $request->city;
+        $room->locality = $request->locality;
         $room->save(); 
 
         flash()->overlay('successfully!', 'Complete your new listing');
@@ -206,11 +206,13 @@ class RoomController extends Controller {
         $this->validate($request, Room::rules());
         $room = Room::where('id', $request->user_id)->first();
         $room->country = $request->country;
-        $room->state = $request->state;
-        $room->city = $request->city;
-        $room->zip = $request->zip;
-        $room->address1 = $request->address1;
-        $room->address2 = $request->address2;
+        $room->administrative_area_level_1 = $request->administrative_area_level_1;
+        $room->locality = $request->locality;
+        $room->postal_code = $request->postal_code;
+        $room->route = $request->route;
+        $room->street_number = $request->street_number;
+        $room->lat = $request->lat;
+        $room->lng = $request->lng;
         $room->save();
         session()->flash('message', 'Location update successfully!');
         return Redirect::back();

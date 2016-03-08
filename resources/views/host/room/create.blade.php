@@ -70,7 +70,7 @@
                      
                                 <div class="col-md-12">
                                     {!! Form::label('city', 'City: ', ['class' => 'control-label']) !!}
-                                    {!! Form::text('city', null, ['class' => 'form-control']) !!}
+                                    {!! Form::text('locality', null, ['class' => 'form-control', 'id' => 'geocomplete']) !!}
                                 </div>
 
                                 <div class="col-md-6">
@@ -86,4 +86,16 @@
             
         </div>
     </div>
+@stop
+
+
+@section('js')
+
+    <!-- Google Maps Geocomplete -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+    <script type="text/javascript" src="http://maps.google.cn/maps/api/js?sensor=false&libraries=places"></script>
+    <script src="/js/googleMaps.js"></script>
+    <script src="/js/jquery.geocomplete.js"></script>
+    <!-- Google Maps Geocomplete END -->
+
 @stop

@@ -6,7 +6,6 @@
 
 @section('content')
 
-
 <div class="row">
 
         @include('host.profile_bar')
