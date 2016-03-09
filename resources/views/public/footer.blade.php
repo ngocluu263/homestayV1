@@ -72,7 +72,6 @@
     <script type="text/javascript" src="/js/all.js"></script>
     <!-- <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script> -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/myMain.js"></script>
 
     <!-- Scrolling Nav JavaScript -->
     <script src="/js/jquery.easing.min.js"></script>
